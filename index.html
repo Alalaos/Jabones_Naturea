@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Perfil Digital</title>
-
-    <!-- Aquí empieza el CSS (El diseño) -->
+    <title>Naturea | Bienvenida</title>
+    
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
+            background-color: #f4f7f5; /* Un fondo grisáceo con toque verde */
+            color: #2f4f4f; /* Color verde oscuro para el texto */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,56 +19,76 @@
 
         .tarjeta {
             background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(47, 79, 79, 0.08);
             text-align: center;
-            max-width: 350px;
-            width: 100%;
+            max-width: 380px;
+            width: 90%;
+            border: 1px solid #e2ece9;
+        }
+
+        .logo-icono {
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
 
         h1 {
-            color: #4f46e5;
-            margin-bottom: 5px;
+            color: #2d6a4f; /* Verde bosque */
+            margin: 10px 0 5px 0;
+            font-size: 1.8rem;
         }
 
         .subtitulo {
-            color: #6b7280;
+            color: #52b788; /* Verde claro */
             font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
         p {
             line-height: 1.6;
-            margin-bottom: 25px;
+            color: #4a5d55;
+            margin-bottom: 30px;
+            font-size: 1rem;
         }
 
         .boton {
-            background-color: #4f46e5;
+            background-color: #2d6a4f;
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 28px;
+            border-radius: 50px; /* Bordes redondeados modernos */
             font-weight: bold;
-            transition: background 0.3s;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(45, 106, 79, 0.2);
         }
 
         .boton:hover {
-            background-color: #3730a3;
+            background-color: #1b4332;
+            transform: translateY(-2px); /* Pequeño efecto de elevación */
+            box-shadow: 0 6px 15px rgba(45, 106, 79, 0.3);
         }
     </style>
 </head>
 <body>
 
-<!-- Aquí empieza el HTML (El contenido) -->
-<div class="tarjeta">
-    <h1>Tu Nombre Aquí</h1>
-    <div class="subtitulo">Futuro Desarrollador Web</div>
-    <p>¡Hola! Estoy aprendiendo a programar páginas web. Este es mi primer diseño usando HTML y CSS estructurado desde cero. ¡Y se ve genial!</p>
-    <a href="https://github.com" target="_blank" class="boton">Ver mi GitHub</a>
-</div>
+    <div class="tarjeta">
+        <div class="logo-icono">🌿</div>
+        <!-- Modifica esto para el título principal -->
+        <h1>Naturea</h1>
+        <!-- Modifica esto para tu eslogan o subtítulo -->
+        <div class="subtitulo">Cosmética Natural & Bienestar</div>
+        
+        <!-- Aquí va la descripción de tu proyecto -->
+        <p>¡Hola! Bienvenidos a Naturea. Estamos creando algo increíble para conectar con lo natural y cuidar de ti. Muy pronto verás todas nuestras novedades aquí.</p>
+        
+        <!-- Cambia el enlace de abajo por tu Instagram, WhatsApp o portafolio -->
+        <a href="https://instagram.com" target="_blank" class="boton">Síguenos en Instagram</a>
+    </div>
 
 </body>
 </html>
