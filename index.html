@@ -61,6 +61,7 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             border: 1px solid #ebdcd5;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
         }
 
         .caja-blanca:hover {
@@ -79,7 +80,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* LOGO DEL CENTRO: ¡SÚPER GIGANTE para leer las letras internas perfectamente! */
+        /* LOGO DEL CENTRO: ¡SÚPER GIGANTE con los nuevos colores pastel! */
         .seccion-logo-centro {
             flex: 2; /* Le damos más espacio en pantalla al centro */
             display: flex;
@@ -93,7 +94,7 @@
             height: 480px;
             object-fit: cover;
             border-radius: 45px; /* Esquinas curvas súper estilizadas */
-            border: 5px solid #7c8c77; /* Borde verde oliva un poco más grueso acorde al tamaño */
+            border: 5px solid #ebd0c9; /* Borde rosa pastel suave */
             background-color: #ffffff;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
             margin-bottom: 20px;
@@ -101,7 +102,7 @@
         }
 
         .marca-titulo {
-            color: #2d6a4f; /* Verde característico */
+            color: #8d5a54; /* Marrón rosado/terracota suave para contrastar lindo con el rosa pastel */
             font-size: 2.4rem;
             font-weight: 700;
             margin-bottom: 5px;
@@ -109,16 +110,16 @@
 
         .eslogan {
             font-size: 1.2rem;
-            color: #8c7370;
+            color: #a88e8a;
             font-weight: 500;
         }
 
-        /* Línea divisoria elegante */
+        /* Línea divisoria elegante en tono rosa pastel traslúcido */
         .linea-separadora {
             width: 100%;
             height: 2px;
-            background-color: #7c8c77;
-            opacity: 0.5;
+            background-color: #ebd0c9;
+            opacity: 0.8;
             margin: 15px 0;
         }
 
@@ -179,6 +180,148 @@
         .tiktok i { color: #000000; }
         .facebook i { color: #1877f2; }
 
+        /* ==================== ESTILOS DEL MODAL CATÁLOGO ==================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Oscurece la pantalla */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.activo {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-contenedor {
+            background-color: #f1e7e0; /* Color piel idéntico al fondo */
+            width: 100%;
+            max-width: 950px;
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            border: 2px solid #ebdcd5;
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            max-height: 90vh;
+            animation: aparecer 0.3s ease;
+        }
+
+        @keyframes aparecer {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Botón cerrar modal */
+        .modal-cerrar {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #4a3e3d;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            z-index: 10;
+        }
+
+        .modal-cerrar:hover {
+            transform: scale(1.15);
+        }
+
+        /* PARTE IZQUIERDA DEL MODAL (Tipos de Jabón) */
+        .modal-izquierda {
+            width: 32%;
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            border-right: 2px solid #ebd0c9; /* Línea divisoria en rosa pastel */
+        }
+
+        .tarjeta-tipo {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #ebdcd5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tipo-imagen {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            background-color: #f1e7e0;
+        }
+
+        .tarjeta-tipo h3 {
+            font-size: 1.2rem;
+            color: #4a3e3d;
+            font-weight: 700;
+        }
+
+        /* PARTE DERECHA DEL MODAL (Cuadrícula 2x2 de Sabores) */
+        .modal-derecha {
+            width: 68%;
+            padding: 45px 35px;
+            overflow-y: auto;
+        }
+
+        .cuadricula-sabores {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .tarjeta-sabor {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #ebdcd5;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sabor-imagen {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            background-color: #f1e7e0; /* Fondo de carga para las fotos */
+        }
+
+        .sabor-titulo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #8d5a54; /* Sabor en marrón rosado/terracota */
+        }
+
+        .sabor-descripcion {
+            font-size: 0.9rem;
+            color: #8c7370;
+            line-height: 1.3;
+        }
+
         /* Ajuste automático para celulares */
         @media (max-width: 900px) {
             .fila-superior {
@@ -206,12 +349,50 @@
                 grid-template-columns: 1fr; /* Pasa a ser una sola columna limpia en móvil */
                 gap: 12px;
             }
+
+            /* Adaptación del modal para móviles */
+            .modal-contenedor {
+                flex-direction: column;
+                max-height: 95vh;
+                overflow-y: auto;
+            }
+
+            .modal-izquierda {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #ebd0c9;
+                padding: 35px 20px 20px 20px;
+                flex-direction: row;
+            }
+
+            .tarjeta-tipo {
+                flex: 1;
+                padding: 15px 10px;
+            }
+
+            .tipo-imagen {
+                height: 80px;
+            }
+
+            .modal-derecha {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .cuadricula-sabores {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
         }
 
         @media (max-width: 480px) {
             .logo-imagen {
                 width: 280px; /* Ajuste límite para pantallas muy chicas de celular */
                 height: 280px;
+            }
+
+            .modal-izquierda {
+                flex-direction: column;
             }
         }
     </style>
@@ -223,13 +404,13 @@
     <!-- FILA SUPERIOR -->
     <div class="fila-superior">
 
-        <!-- CARTA -->
-        <a href="#" class="caja-blanca">
+        <!-- CARTA (Se agregó un id y un cursor de puntero) -->
+        <div id="abrir-catalogo" class="caja-blanca">
             <i class="fa-regular fa-clipboard"></i>
             <div class="caja-titulo">Catálogo</div>
-        </a>
+        </div>
 
-        <!-- LOGO (SÚPER GIGANTE, FLOTANTE Y CON BORDE DE DISEÑO) -->
+        <!-- LOGO (SÚPER GIGANTE, FLOTANTE Y CON BORDE DE DISEÑO EN ROSA PASTEL) -->
         <div class="seccion-logo-centro">
             <img class="logo-imagen" src="logo.jpeg" alt="Logo de Naturéa">
             <h1 class="marca-titulo">Naturéa</h1>
@@ -244,7 +425,7 @@
 
     </div>
 
-    <!-- LÍNEA SEPARADORA -->
+    <!-- LÍNEA SEPARADORA ROSA PASTEL -->
     <div class="linea-separadora"></div>
 
     <!-- SECCIÓN REDES (CUADRÍCULA 2X2) -->
@@ -275,6 +456,85 @@
     </div>
 
 </div>
+
+<!-- ==================== ESTRUCTURA DEL MODAL CATÁLOGO ==================== -->
+<div id="modal-catalogo" class="modal-overlay">
+    <div class="modal-contenedor">
+        <!-- Botón cerrar -->
+        <button id="cerrar-catalogo" class="modal-cerrar">&times;</button>
+
+        <!-- SECCIÓN IZQUIERDA (Tipos de Jabones) -->
+        <div class="modal-izquierda">
+            <!-- Jabón Masajista -->
+            <div class="tarjeta-tipo">
+                <img class="tipo-imagen" src="https://images.unsplash.com/photo-1605264964528-06403738d6df?auto=format&fit=crop&q=80&w=400" alt="Jabón Masajista">
+                <h3>Jabón Masajista</h3>
+            </div>
+            <!-- Jabón Normal -->
+            <div class="tarjeta-tipo">
+                <img class="tipo-imagen" src="https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&q=80&w=400" alt="Jabón Normal">
+                <h3>Jabón Normal</h3>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DERECHA (Sabores en Cuadrícula 2x2) -->
+        <div class="modal-derecha">
+            <div class="cuadricula-sabores">
+                <!-- Aloe Vera -->
+                <div class="tarjeta-sabor">
+                    <img class="sabor-imagen" src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=400" alt="Aloe Vera">
+                    <div class="sabor-titulo">Aloe Vera</div>
+                    <p class="sabor-descripcion">Regenerador, hidratante y calmante ideal para pieles sensibles.</p>
+                </div>
+
+                <!-- Arroz con Miel -->
+                <div class="tarjeta-sabor">
+                    <img class="sabor-imagen" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400" alt="Arroz con Miel">
+                    <div class="sabor-titulo">Arroz con Miel</div>
+                    <p class="sabor-descripcion">Exfoliación suave que ilumina tu piel gracias a los nutrientes naturales.</p>
+                </div>
+
+                <!-- Avena -->
+                <div class="tarjeta-sabor">
+                    <img class="sabor-imagen" src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&q=80&w=400" alt="Avena">
+                    <div class="sabor-titulo">Avena</div>
+                    <p class="sabor-descripcion">Nutrición profunda con propiedades antiinflamatorias y calmantes.</p>
+                </div>
+
+                <!-- Sabor Faltante: Manzanilla -->
+                <div class="tarjeta-sabor">
+                    <img class="sabor-imagen" src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&q=80&w=400" alt="Manzanilla">
+                    <div class="sabor-titulo">Manzanilla</div>
+                    <p class="sabor-descripcion">Suavidad y relajación extrema para desinflamar y cuidar la piel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== LÓGICA DE INTERACCIÓN (JAVASCRIPT) ==================== -->
+<script>
+    const abrirBtn = document.getElementById('abrir-catalogo');
+    const cerrarBtn = document.getElementById('cerrar-catalogo');
+    const modal = document.getElementById('modal-catalogo');
+
+    // Abre el modal al hacer clic en "Catálogo"
+    abrirBtn.addEventListener('click', () => {
+        modal.classList.add('activo');
+    });
+
+    // Cierra el modal al hacer clic en el botón de la equis (&times;)
+    cerrarBtn.addEventListener('click', () => {
+        modal.classList.remove('activo');
+    });
+
+    // Cierra el modal si se hace clic fuera del recuadro del catálogo (en la zona oscura)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('activo');
+        }
+    });
+</script>
 
 </body>
 </html>
