@@ -3,92 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naturea | Bienvenida</title>
-    
+    <title>Naturea | Jabones Artesanales</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f5; /* Un fondo grisáceo con toque verde */
-            color: #2f4f4f; /* Color verde oscuro para el texto */
+            /* Fondo color piel claro / nude suave */
+            background-color: #f5ebe6;
+            color: #4a3e3d;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .tarjeta {
-            background-color: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(47, 79, 79, 0.08);
+        .contenedor-principal {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px 20px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(74, 62, 61, 0.08);
             text-align: center;
-            max-width: 380px;
-            width: 90%;
-            border: 1px solid #e2ece9;
+            border: 1px solid #ebdcd5;
         }
 
-        .logo-icono {
-            font-size: 3rem;
-            margin-bottom: 10px;
+        /* Sección del Logo */
+        .seccion-logo {
+            margin-bottom: 25px;
+        }
+
+        /* NUEVO: Logo rectangular con curvas suaves */
+        .logo-imagen {
+            width: 130px; /* Un poco más ancho */
+            height: 100px; /* Menos alto para que sea rectangular */
+            object-fit: cover;
+            border-radius: 18px; /* Curvas suaves en las esquinas */
+            border: 3px solid #ebdcd5;
+            background-color: #fcf8f6;
+            margin-bottom: 12px;
         }
 
         h1 {
-            color: #2d6a4f; /* Verde bosque */
-            margin: 10px 0 5px 0;
+            color: #2d6a4f; /* Verde oliva/bosque para combinar con Naturea */
             font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        .subtitulo {
-            color: #52b788; /* Verde claro */
+        .eslogan {
             font-size: 0.9rem;
+            color: #8c7370;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: bold;
-            margin-bottom: 20px;
         }
 
-        p {
-            line-height: 1.6;
-            color: #4a5d55;
+        /* Cuadros del Centro */
+        .contenedor-cuadros {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             margin-bottom: 30px;
-            font-size: 1rem;
         }
 
-        .boton {
-            background-color: #2d6a4f;
-            color: white;
+        .cuadro {
+            background-color: #fbf5f2; /* Tono piel aún más suave */
+            border: 1px solid #ebdcd5;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 50px; /* Bordes redondeados modernos */
-            font-weight: bold;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(45, 106, 79, 0.2);
+            color: inherit;
+            display: block;
         }
 
-        .boton:hover {
-            background-color: #1b4332;
-            transform: translateY(-2px); /* Pequeño efecto de elevación */
-            box-shadow: 0 6px 15px rgba(45, 106, 79, 0.3);
+        .cuadro:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(140, 115, 112, 0.12);
+            border-color: #d1b8b0;
+        }
+
+        .cuadro-titulo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2d6a4f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cuadro-descripcion {
+            font-size: 0.9rem;
+            color: #6b5957;
+            line-height: 1.4;
+        }
+
+        /* Sección de Redes Sociales */
+        .seccion-redes {
+            border-top: 1px solid #ebdcd5;
+            padding-top: 20px;
+        }
+
+        .titulo-redes {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #8c7370;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .botones-redes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .boton-red {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .instagram {
+            background-color: #f4e3dc;
+            color: #8c3226;
+        }
+
+        .instagram:hover {
+            background-color: #ebd0c7;
+        }
+
+        .whatsapp {
+            background-color: #e2f0e9;
+            color: #1b4332;
+        }
+
+        .whatsapp:hover {
+            background-color: #cfe6da;
         }
     </style>
 </head>
 <body>
 
-    <div class="tarjeta">
-        <div class="logo-icono">🌿</div>
-        <!-- Modifica esto para el título principal -->
+<div class="contenedor-principal">
+
+    <!-- SECCIÓN LOGO -->
+    <div class="seccion-logo">
+        <!--
+          Recuerda subir tu logo a tu GitHub con el nombre logo.png
+          y luego cambiar el enlace de abajo por "logo.png"
+        -->
+        <img class="logo-imagen" src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=250" alt="Logo de Naturea">
         <h1>Naturea</h1>
-        <!-- Modifica esto para tu eslogan o subtítulo -->
-        <div class="subtitulo">Cosmética Natural & Bienestar</div>
-        
-        <!-- Aquí va la descripción de tu proyecto -->
-        <p>¡Hola! Bienvenidos a Naturea. Estamos creando algo increíble para conectar con lo natural y cuidar de ti. Muy pronto verás todas nuestras novedades aquí.</p>
-        
-        <!-- Cambia el enlace de abajo por tu Instagram, WhatsApp o portafolio -->
-        <a href="https://instagram.com" target="_blank" class="boton">Síguenos en Instagram</a>
+        <p class="eslogan">Jabones Artesanales & Cuidado Natural</p>
     </div>
+
+    <!-- SECCIÓN DE CUADROS EN EL CENTRO -->
+    <div class="contenedor-cuadros">
+
+        <!-- CUADRO 1: LA CARTA / SABORES DE JABONES -->
+        <a href="#" class="cuadro">
+            <div class="cuadro-titulo">🧼 Sabores de Jabones</div>
+            <div class="cuadro-descripcion">Explora nuestra variedad: avena, carbón activado, miel, manzanilla y más esencias naturales para tu piel.</div>
+        </a>
+
+        <!-- CUADRO 2: DELIVERY -->
+        <a href="#" class="cuadro">
+            <div class="cuadro-titulo">🛵 Envíos y Delivery</div>
+            <div class="cuadro-descripcion">Hacemos entregas directas a domicilio. Consulta aquí nuestras zonas de reparto, horarios y tarifas.</div>
+        </a>
+
+    </div>
+
+    <!-- SECCIÓN DE REDES SOCIALES -->
+    <div class="seccion-redes">
+        <div class="titulo-redes">¡Nuestras redes!</div>
+        <div class="botones-redes">
+
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" class="boton-red instagram">
+                📸 Instagram
+            </a>
+
+            <!--
+              WhatsApp: Reemplaza el número 51999999999 por tu número de celular real
+              (No incluyas espacios ni guiones, solo el código de país al inicio)
+            -->
+            <a href="https://wa.me/51999999999?text=Hola%20Naturea!%20Me%20gustaría%20recibir%20más%20información%20sobre%20tus%20jabones." target="_blank" class="boton-red whatsapp">
+                💬 WhatsApp
+            </a>
+
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
